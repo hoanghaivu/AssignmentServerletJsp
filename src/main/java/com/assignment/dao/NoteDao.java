@@ -10,7 +10,7 @@ public class NoteDao {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
     private EntityManager em = emf.createEntityManager();
 
-    public void saveUser(Note note) {
+    public void saveNote(Note note) {
         em.getTransaction().begin();
         em.persist(note);
         em.getTransaction().commit();
