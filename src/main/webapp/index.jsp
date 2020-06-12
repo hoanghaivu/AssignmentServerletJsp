@@ -11,6 +11,7 @@
     <title>Index</title>
 </head>
 <body>
-<h1>Index</h1>
+<h1>Welcome</h1>
+<a href="note">Go home</a>
 </body>
 </html>

@@ -3,11 +3,11 @@ package com.assignment.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "note")
 public class Note {
-
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
@@ -21,7 +21,18 @@ public class Note {
     private String content;
 
     @Column(name = "created_at")
-    private java.sql.Date createdAt;
+    private String createdAt;
+
+    public Note() {
+
+    }
+
+    public Note(Integer id, String title, String content, String createdAt) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.createdAt = createdAt;
+    }
 
     public Integer getId() {
         return id;
@@ -47,11 +58,11 @@ public class Note {
         this.content = content;
     }
 
-    public java.sql.Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(java.sql.Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
